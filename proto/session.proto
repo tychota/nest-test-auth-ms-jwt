@@ -5,15 +5,26 @@ package session;
 service MicroServiceSession {
   rpc GetAuthenticatedUserByEmailPassword(EmailPasswordCredentials)
       returns (User) {}
+  rpc CreateUser(UserInput) returns (Empty) {}
 }
 
 message EmailPasswordCredentials {
   string email = 1;
-  string password = 2;
+  string clearPassword = 2;
+}
+
+message UserInput {
+  string email = 1;
+  string clearPassword = 2;
+  string firstName = 3;
+  string lastName = 4;
 }
 
 message User {
   int32 id = 1;
-  string firstName = 2;
-  string lastName = 3;
+  string email = 2;
+  string firstName = 3;
+  string lastName = 4;
 }
+
+message Empty {}
