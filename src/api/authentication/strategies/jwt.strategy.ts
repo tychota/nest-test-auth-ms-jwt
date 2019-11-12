@@ -1,5 +1,4 @@
-import { Injectable, UnauthorizedException, Logger } from '@nestjs/common';
-import { AbstractStrategy } from '@nestjs/passport';
+import { Injectable, Logger } from '@nestjs/common';
 import { Request } from 'express';
 import * as passport from 'passport';
 import { JwtService } from '@nestjs/jwt';

@@ -5,6 +5,7 @@ import { ConfigModule, ConfigService } from 'nestjs-config';
 
 import * as path from 'path';
 import { JwtStrategy } from './strategies/jwt.strategy';
+import { LocalStrategy } from './strategies/local.statregy';
 
 const configPath = path.resolve(path.join(process.cwd(), 'config', '**/!(*.d).{js,ts}'));
 
@@ -22,6 +23,6 @@ const configPath = path.resolve(path.join(process.cwd(), 'config', '**/!(*.d).{j
       inject: [ConfigService],
     }),
   ],
-  providers: [JwtStrategy],
+  providers: [JwtStrategy, LocalStrategy],
 })
 export class AuthenticationModule {}

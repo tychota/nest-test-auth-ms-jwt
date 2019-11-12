@@ -25,6 +25,7 @@ export class ApiController implements OnModuleInit {
   }
 
   @ApiUseTags('Login')
+  @UseGuards(AuthGuard('emailPassword'))
   @Post('/login')
   public async login(@Body() body: LoginDto): Promise<UserOutputDto> {
     const user = await this.microServiceSession.getAuthenticatedUserByEmailPassword(body);
