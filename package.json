@@ -32,7 +32,7 @@
     "argon2": "^0.25.1",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.11.0",
-    "grpc": "^1.24.2",
+    "grpc": "^1.24.9",
     "nestjs-config": "^1.4.4",
     "passport": "^0.4.0",
     "reflect-metadata": "^0.1.13",
